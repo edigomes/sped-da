@@ -381,7 +381,7 @@ class Dacce extends Common
             'size' => 12,
             'style' => 'B'
         );
-        $this->pTextBox($x + 2, $y + 13, $w2, 8, $texto, $aFont, 'T', 'L', 0, '');
+        //$this->pTextBox($x + 2, $y + 13, $w2, 8, $texto, $aFont, 'T', 'L', 0, '');
         $numNF = substr($this->chNFe, 25, 9);
         $serie = substr($this->chNFe, 22, 3);
         $numNF = $this->pFormat($numNF, "###.###.###");
