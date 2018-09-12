@@ -124,12 +124,12 @@ class Damdfe extends Common
             $this->errMsg = 'Um caminho para o arquivo xml da MDFe deve ser passado!';
             $this->errStatus = true;
         }
-        if (!is_file($xmlfile)) {
-            $this->errMsg = 'Um caminho para o arquivo xml da MDFe deve ser passado!';
-            $this->errStatus = true;
+        if (is_file($xmlfile)) {
+            $docxml = file_get_contents($xmlfile);
+        } else {
+            $docxml = $xmlfile;
         }
 
-        $docxml = file_get_contents($xmlfile);
         $this->dom = new Dom();
         $this->dom->loadXMLString(urldecode($docxml));
         $this->mdfeProc = $this->dom->getElementsByTagName("mdfeProc")->item(0);
